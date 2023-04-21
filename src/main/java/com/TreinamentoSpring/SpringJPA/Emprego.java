@@ -6,18 +6,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@Entity // dizer que quero criar uma base de dados
+//Dizer que quero criar uma base de dados (Local)
+@Entity
 public class Emprego {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO) // primary key autoIncrement
+	@Id // PrimaryKey autoIncrement
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
 	@NonNull
 	@Size(min = 4)
 	private String titulo;
+	@NotNull
+	@Size(min = 3)
 	private String empresa;
+	@NotNull
+	@Size(min = 10)
 	private String descricao;
 
 	public long getId() {
