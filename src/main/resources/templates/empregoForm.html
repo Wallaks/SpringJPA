@@ -3,20 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Spring Boot - Curso</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        margin: 20px 0;
+      }
+      form {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        width: 50%;
+        margin: 0 auto;
+      }
+      input[type="text"], textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .error {
+        color: red;
+      }
+    </style>
 </head>
 <body>
 <h1>Formulário de Emprego</h1>
-
 <form action="#" th:action="@{/process}" th:object="${emprego}" method="post">
-    Titulo: <input type="text" th:field="*{titulo}">
-    <span th:if="${#fields.hasErrors('titulo')}"
-          th:errors="*{titulo}"></span><br>
-    Empresa: <input type="text" th:field="*{empresa}">
-    <span th:if="${#fields.hasErrors('empresa')}"
-          th:errors="*{empresa}"></span><br>
-    Descricao: <textarea rows="3" th:field="*{descricao}"></textarea>
-    <span th:if="${#fields.hasErrors('descricao')}"
-          th:errors="*{descricao}"></span><br>
+    <label for="titulo">Titulo:</label>
+    <input type="text" id="titulo" name="titulo" th:field="*{titulo}">
+    <span class="error" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></span><br>
+    <label for="empresa">Empresa:</label>
+    <input type="text" id="empresa" name="empresa" th:field="*{empresa}">
+    <span class="error" th:if="${#fields.hasErrors('empresa')}" th:errors="*{empresa}"></span><br>
+    <label for="descricao">Descricao:</label>
+    <textarea id="descricao" name="descricao" rows="3" th:field="*{descricao}"></textarea>
+    <span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></span><br>
     <input type="submit" value="Enviar">
 </form>
 </body>

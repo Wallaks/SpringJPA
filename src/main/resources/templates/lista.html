@@ -2,15 +2,55 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de empregos</title>
+    <title>Lista de Empregos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .emprego {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 60%;
+        }
+        .titulo {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .empresa {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .descricao {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-<h1>Formulario de emprego</h1>
-<a href="/add">Adicionar um novo emprego</a><br>
-
-<div th:each="emprego : ${empregos}">
-    <h4 th:inline="text"> [[${emprego.titulo}]] na [[${emprego.empresa}]]</h4>
-    <p th:text="${emprego.descricao}"></p>
+<h1>Lista de Empregos</h1>
+<a href="/add">Adicionar um novo emprego</a>
+<div th:each="emprego : ${empregos}" class="emprego">
+    <h4 class="titulo" th:inline="text">[[${emprego.titulo}]]</h4>
+    <h5 class="empresa" th:inline="text">na [[${emprego.empresa}]]</h5>
+    <p class="descricao" th:text="${emprego.descricao}"></p>
 </div>
 </body>
 </html>

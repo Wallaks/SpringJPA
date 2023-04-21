@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 
-//Nosso controlador
 @Controller
 public class EmpregoController {
 
@@ -23,8 +22,6 @@ public class EmpregoController {
 		return "lista";
 	}
 
-	// Vai criar um novo obj da classe emprego e isto vai ser passado como referencia
-	// para a view
 	@GetMapping("/add")
 	public String empregoForm(Model model) {
 		model.addAttribute("emprego", new Emprego());
