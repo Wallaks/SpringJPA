@@ -47,18 +47,18 @@
     </style>
 </head>
 <body>
-<h1>Formulário de Emprego</h1>
+<h1>Employment Form</h1>
 <form action="#" th:action="@{/process}" th:object="${emprego}" method="post">
-    <label for="titulo">Titulo:</label>
+    <label for="titulo">Title:</label>
     <input type="text" id="titulo" name="titulo" th:field="*{titulo}">
     <span class="error" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></span><br>
-    <label for="empresa">Empresa:</label>
+    <label for="empresa">Company:</label>
     <input type="text" id="empresa" name="empresa" th:field="*{empresa}">
     <span class="error" th:if="${#fields.hasErrors('empresa')}" th:errors="*{empresa}"></span><br>
-    <label for="descricao">Descricao:</label>
+    <label for="descricao">Description:</label>
     <textarea id="descricao" name="descricao" rows="3" th:field="*{descricao}"></textarea>
     <span class="error" th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></span><br>
-    <input type="submit" value="Enviar">
+    <input type="submit" value="To send">
 </form>
 </body>
 </html>

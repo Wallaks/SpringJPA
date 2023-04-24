@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Empregos</title>
+    <title>Job List</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -45,12 +45,12 @@
     </style>
 </head>
 <body>
-<h1>Lista de Empregos</h1>
-<a href="/add">Adicionar um novo emprego</a>
+<h1>Job List</h1>
+<a href="/add">Add a new job</a>
 <div th:each="emprego : ${empregos}" class="emprego">
     <h4 class="titulo" th:inline="text">[[${emprego.titulo}]]</h4>
-    <h5 class="empresa" th:inline="text">na [[${emprego.empresa}]]</h5>
-    <p class="descricao" th:text="${emprego.descricao}"></p>
+    <h5 class="empresa" th:inline="text">at [[${emprego.empresa}]]</h5>
+    <p class="descrição" th:text="${emprego.descricao}"></p>
 </div>
 </body>
 </html>
